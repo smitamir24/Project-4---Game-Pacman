@@ -1,0 +1,274 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 3% 10%;
+    overflow: hidden;
+}
+
+body {
+    overflow: hidden;
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    padding: 15%;
+}
+
+.bodyDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------- Общий стиль кнопок и плашек ---------- */
+
+.mm-btn,
+.backToMenu,
+.settings > p,
+.settings > button,
+.menuWin > button {
+    font-weight: 1000;
+    border: 2px solid gray;
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+
+.mm-btn:hover,
+.backToMenu:hover,
+.settings > button:hover,
+.menuWin > button:hover {
+    scale: 1.1;
+}
+
+.mm-btn:active,
+.backToMenu:active,
+.settings > button:active,
+.menuWin > button:active {
+    scale: 1.05;
+}
+
+/* ---------- Главное меню ---------- */
+
+.mainMenu {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+    padding: 3% 15%;
+    backdrop-filter: blur(10px);
+    transition: 0.5s;
+}
+
+.mm-btn {
+    width: 20%;
+    height: 6%;
+    font-size: 18px;
+    padding-bottom: 0.2%;
+    border-radius: 50px;
+}
+
+/* ---------- Настройки ---------- */
+
+.mainSetting {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+    padding: 5% 35% 30% 10%;
+    backdrop-filter: blur(10px);
+}
+
+.settings {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings > p,
+.settings > button {
+    font-size: 18px;
+}
+
+.settings > p:nth-of-type(1) {
+    width: 200px;
+    padding: 2% 0 2.2% 2%;
+    border-radius: 15px;
+}
+
+.settings > p:nth-of-type(2) {
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2% 0 2% 5px;
+    border-radius: 15px;
+}
+
+.settings > button {
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2% 2px 2% 0;
+    border-radius: 30px;
+}
+
+.backToMenu {
+    position: absolute;
+    bottom: 10%;
+    right: 20%;
+    width: 15%;
+    height: 8%;
+    font-size: 18px;
+    padding-bottom: 0.2%;
+    border-radius: 50px;
+}
+
+/* ---------- Меню победы ---------- */
+
+.menuWin {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    padding: 5% 20%;
+    backdrop-filter: blur(10px);
+    transition: 0.75s;
+    opacity: 0;
+}
+
+.menuWin > p {
+    color: white;
+    font-size: 100px;
+    font-weight: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(100px);
+    border: 2px solid gray;
+    border-radius: 30px;
+    padding: 1% 7%;
+}
+
+.menuWin > button {
+    padding: 1% 6%;
+    font-size: 22px;
+    border-radius: 50px;
+}
+
+/* ---------- Игра ---------- */
+
+.mainGame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.positionHorizontal {
+    display: flex;
+    width: 100%;
+}
+
+.positionCell {
+    width: 4%;
+    aspect-ratio: 1 / 1;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PlayerIcon {
+    height: 100%;
+    width: 100%;
+    padding: 10%;
+}
+
+.coin {
+    background-color: yellow;
+    border: 3px solid yellow;
+    border-radius: 50%;
+}
+
+.block {
+    background-color: rgb(0, 0, 255);
+}
+
+/* Затемнение фона при победе */
+.bg {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    backdrop-filter: blur(15px);
+    transition: 2s;
+}
+
+/* ---------- Счётчик очков ---------- */
+
+.balanceDisplay {
+    opacity: 0;
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    font-weight: 1000;
+    top: 1%;
+    left: 20.5%;
+    transition: 2s;
+    border-radius: 50px;
+    padding: 0.5% 1.5%;
+}
+
+.balanceDisplay.visible {
+    opacity: 1;
+}
+
+/* Победа: счётчик уезжает в центр */
+.balanceDisplay.win {
+    color: rgb(0, 150, 0);
+    top: 44%;
+    left: 34%;
+    font-size: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgb(0, 80, 0);
+    padding: 1% 3%;
+}
+
+/* Затем быстро исчезает, уступая место меню победы */
+.balanceDisplay.fadeOut {
+    transition: 0.3s;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacman</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="bodyDiv">
+        <!-- Главное меню -->
+        <div id="mainMenu" class="mainMenu">
+            <button id="playButton" class="mm-btn">Играть</button>
+            <button id="settingButton" class="mm-btn">Настройки</button>
+            <button id="exitButton" class="mm-btn">Выход</button>
+        </div>
+
+        <!-- Настройки -->
+        <div id="mainSetting" class="mainSetting">
+            <div class="settings">
+                <p>Размер карты:</p>
+                <button id="add10sizemap">+10</button>
+                <p id="mapsizetext">100%</p>
+                <button id="del10sizemap">-10</button>
+            </div>
+            <button id="backToMenu" class="backToMenu">Назад</button>
+        </div>
+
+        <!-- Игра -->
+        <div id="mainGame" class="mainGame">
+            <div class="bg"></div>
+            <p class="balanceDisplay">Очки: 0/219</p>
+        </div>
+
+        <!-- Победа -->
+        <div id="menuWin" class="menuWin">
+            <p>Победа!</p>
+            <button id="backWithGameToMenu">Назад в меню</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
