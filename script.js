@@ -26,7 +26,7 @@ const MOVE_COOLDOWN_MS = 100;
 const WIN_MENU_DELAY_MS = 4000;
 
 const MAP_SIZE_MIN = 30;
-const MAP_SIZE_MAX = 150;
+const MAP_SIZE_MAX = 100;
 const MAP_SIZE_STEP = 10;
 
 // Строки (индексы с 0), на которых края карты соединены телепортом
